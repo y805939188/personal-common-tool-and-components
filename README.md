@@ -1,7 +1,10 @@
-# promise-loop
+# promise-loops
 
 这是一个可以用来循环执行promise的工具
 </br></br>
+```bash
+npm install --save promise-loops
+```
 
 # Demo
 比如每隔X秒输出一个数, 可以随时终止, 随时开始</br>
