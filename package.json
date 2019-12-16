@@ -25,6 +25,7 @@
     "prettier": "^1.19.1",
     "ts-jest": "^24.2.0",
     "tslint": "^6.0.0-beta0",
+    "tslint-config-airbnb": "^5.11.2",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.3"
   }
