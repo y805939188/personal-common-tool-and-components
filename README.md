@@ -5,7 +5,7 @@
 
 # Demo
 比如每隔X秒输出一个数, 可以随时终止, 随时开始</br>
-![demo1](./promise1.gif)
+![demo1](https://github.com/y805939188/promise-loop/blob/master/promise1.gif)
 ```js
 let index = 0;
 const addPromise = (params) => (
@@ -31,7 +31,7 @@ loop.trim(); // 开始轮询promise
 </br>
 
 比如通过接口获取进度条的进度之类, 可以随时暂停, 随时开始</br>
-![demo2](./promise2.gif)
+![demo2](https://github.com/y805939188/promise-loop/blob/master/promise2.gif)
 
 ```js
 import LoopPromise from '../src';
