@@ -1,6 +1,6 @@
 {
   "name": "promise-loop",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "promise loop",
   "main": "lib/index.js",
   "scripts": {
@@ -43,5 +43,6 @@
     "tslint-config-airbnb": "^5.11.2",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.3"
-  }
+  },
+  "keywords": ["promise", "loop", "promise loop", "loop promise"]
 }
