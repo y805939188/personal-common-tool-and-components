@@ -2,7 +2,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import json from 'rollup-plugin-json';
 import babel from 'rollup-plugin-babel';
-import typescript from 'rollup-plugin-typescript';
+import typescript from 'rollup-plugin-typescript2';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 
 const mode = process.env.NODE_ENV;
@@ -20,7 +20,9 @@ export default {
     include: [process.cwd() + '/demo/**', process.cwd() + '/src/**'],
   },
   plugins: [
-    typescript(),
+    typescript({
+      declaration: true,
+    }),
     babel({ exclude: process.cwd() + '/node_modules/**' }),
     json(),
     commonjs(),
