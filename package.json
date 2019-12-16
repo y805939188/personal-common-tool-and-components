@@ -1,0 +1,31 @@
+{
+  "name": "promise-loop",
+  "version": "0.0.1",
+  "description": "promise loop",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "npm run githook && tsc -w",
+    "githook": "mkdir -p .git/hooks/ && cp ./pre-commit .git/hooks/ && chmod +x .git/hooks/pre-commit || true",
+    "build": "tsc",
+    "test": "jest --config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/y805939188/promise-loop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/y805939188/promise-loop/issues"
+  },
+  "homepage": "https://github.com/y805939188/promise-loop#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.2.0",
+    "tslint": "^6.0.0-beta0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.3"
+  }
+}
