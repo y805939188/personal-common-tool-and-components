@@ -1,5 +1,5 @@
 {
-  "name": "loops-promise",
+  "name": "promise-loops",
   "version": "0.0.3",
   "description": "promise loop",
   "main": "lib/index.js",
