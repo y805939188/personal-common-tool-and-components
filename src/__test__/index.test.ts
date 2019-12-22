@@ -5,6 +5,7 @@ describe('测试LoopPromise', () => {
     const fn = jest.fn();
     let index1 = 0;
     let index2 = 0;
+    let index3 = 0;
     const TestPromise1 = () => (
       new Promise((resolve) => {
         resolve(++index1);
@@ -21,9 +22,15 @@ describe('测试LoopPromise', () => {
         reject();
       })
     );
+    const TestPromise4 = () => (
+      new Promise((resolve, reject) => {
+        resolve(++index3);
+      })
+    )
     const loop1 = new LoopPromise(TestPromise1);
     const loop2 = new LoopPromise(TestPromise2);
     const loop3 = new LoopPromise(TestPromise3);
+    const loop4 = new LoopPromise(TestPromise4);
     loop1
       .time(1000)
       .interruptTime(res => (res !== 3))
@@ -46,6 +53,9 @@ describe('测试LoopPromise', () => {
     loop3
       .time(1000)
       .trim()
+    loop4
+      .time(() => (index3*1000))
+      .interruptTime(2)
 
     setTimeout(() => {
       loop2.immediatelyInterrupt();

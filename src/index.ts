@@ -2,7 +2,7 @@ type PromiseType = (...params: any[]) => Promise<any>;
 class LoopPromise {
   private _promise: PromiseType;
   private _params: any[] = [];
-  private _time: number = 1000;
+  private _time: ((params: any) => number) | number = 1000;
   private _index: number = 1;
   private _interrupt: number | Function = 1;
   private _callbacks: Function[] = [];
@@ -25,6 +25,7 @@ class LoopPromise {
     return () => (new Promise((resolve) => {
       const params = this._params;
       const params1 = params[0];
+      const time = this._time;
       const timeoutId = setTimeout(() => {
         const currentParams = !params1 ? [] : (
           (typeof params1 === 'function') ? [params1(this._prev)] : params
@@ -33,7 +34,7 @@ class LoopPromise {
           .then(res => this._filter(res))
           .then((res) => { this._prev = res; resolve(res); })
           .catch((err) => { this._prev = null; resolve('error'); });
-      }, this._time);
+      }, typeof time === 'function' ? time(this._prev) : typeof time === 'number' ? time : 1000);
       this.immediatelyInterrupt = this._immediatelyInterrupt.bind(this, timeoutId, resolve);
       this.clear = this._clear.bind(this, timeoutId, resolve);
     }));
@@ -49,7 +50,7 @@ class LoopPromise {
     return this;
   }
 
-  public time = (time: number) => {
+  public time = (time: ((params: any) => number) | number) => {
     this._time = time;
     return this;
   }
