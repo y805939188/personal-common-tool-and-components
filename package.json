@@ -1,6 +1,6 @@
 {
   "name": "promise-loops",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "promise loops",
   "main": "lib/index.js",
   "scripts": {
