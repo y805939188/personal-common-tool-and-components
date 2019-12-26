@@ -1,7 +1,7 @@
 {
   "name": "promise-loops",
   "version": "1.0.1",
-  "description": "promise loop",
+  "description": "promise loops",
   "main": "lib/index.js",
   "scripts": {
     "start": "npm run githook && rollup --config ./config/rollup.dev.conf.js -w && livereload 'src/' ",
@@ -50,6 +50,7 @@
     "loop",
     "promise loop",
     "loop promise",
-    "loops"
+    "loops",
+    "promise loops"
   ]
 }
