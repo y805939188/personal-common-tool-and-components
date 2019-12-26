@@ -14,11 +14,12 @@ declare class LoopPromise {
     private _params2;
     private _immediatelyInterrupt;
     private _clear;
+    private _isImmediately;
     constructor(promise: PromiseType);
     private initPromise;
     filterRes: (cb: (res: any) => any) => this;
     params: (...params: any[]) => this;
-    time: (time: number) => this;
+    time: (time: number | ((params: any) => number)) => this;
     interruptTime: (interrupt: number | ((p: any) => boolean), trim?: boolean) => this;
     callback: (callback: (res: any) => void) => this;
     immediatelyInterrupt: any;
