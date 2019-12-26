@@ -14,6 +14,7 @@ class LoopPromise {
   private _params2: any = [];
   private _immediatelyInterrupt: any;
   private _clear: any;
+  private _isImmediately: boolean = false;
   constructor(promise: PromiseType) {
     this._promise = this.initPromise(promise);
     this._immediatelyInterrupt = this.immediatelyInterrupt;
@@ -59,6 +60,7 @@ class LoopPromise {
     (typeof interrupt === 'number' || typeof interrupt === 'function') ?
     (this._interrupt = interrupt) : (this._interrupt = 1);
     this._trim1 = trim;
+    this._isImmediately = false;
     return this;
   }
 
@@ -78,6 +80,7 @@ class LoopPromise {
     if (!timeoutId || !reject) return;
     this._trim2 = !!trim;
     this._params2 = params;
+    this._isImmediately = true;
     clearTimeout(timeoutId);
     reject && reject('interrupted');
   }
@@ -95,8 +98,8 @@ class LoopPromise {
         callbacks.forEach(fn => fn('error'));
         break;
       } else if (currentRes === 'interrupted') {
-        if (this._trim2) callbacks.forEach(fn => fn(...this._params2));
-        else if (this._trim1) callbacks.forEach(fn => fn(currentRes));
+        if (this._trim2 && this._isImmediately) callbacks.forEach(fn => fn(...this._params2));
+        else if (this._trim1 && !this._isImmediately) callbacks.forEach(fn => fn(currentRes));
         this._status = 0;
         this._trim2 = false;
         this._params2 = null;
