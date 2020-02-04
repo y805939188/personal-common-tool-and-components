@@ -5,25 +5,21 @@ import babel from 'rollup-plugin-babel';
 import typescript from 'rollup-plugin-typescript2';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 
-const mode = process.env.NODE_ENV;
-const isDev = mode === 'development';
-
+const originPath = process.cwd();
 export default {
-  input: isDev ? process.cwd() + '/demo/index.ts' : process.cwd() + '/src/index.ts',
+  input: `${originPath}/src/index.ts`,
   output: {
-    file: isDev ? process.cwd() + '/demo/index.js' : process.cwd() + '/lib/index.js',
+    file: `${originPath}/lib/index.js`,
     name: 'promiseLoop',
     format: 'umd',
     sourcemap: true,
   },
   watch: {
-    include: [process.cwd() + '/demo/**', process.cwd() + '/src/**'],
+    include: [`${originPath}/demo/**`, `${originPath}/src/**`],
   },
   plugins: [
-    typescript({
-      declaration: true,
-    }),
-    babel({ exclude: process.cwd() + '/node_modules/**' }),
+    typescript({ declaration: true }),
+    babel({ exclude: `${originPath}/node_modules/**` }),
     json(),
     commonjs(),
     resolve(),
