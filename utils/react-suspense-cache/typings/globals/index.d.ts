@@ -1,0 +1,11 @@
+declare module 'react-use/lib';
+declare module 'react-component-debounce';
+declare module '*.svg';
+declare module '*.png';
+declare module '*.jpg';
+declare module '*.jpeg';
+declare module '*.gif';
+declare module '*.bmp';
+declare module '*.tiff';
+declare module 'lodash.isequal';
+declare const __DEV__: boolean;

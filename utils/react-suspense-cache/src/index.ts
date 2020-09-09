@@ -1,5 +1,4 @@
-// @ts-ignore
-import isEqual from 'lodash/isEqual';
+import isEqual from 'lodash.isequal';
 
 export type Cacheable = boolean | ((key: any) => boolean);
 
@@ -22,6 +21,7 @@ class FetchData {
   private _cache2: any = null;
   private _tempCacheData: any = null;
   private _prevParams: any[] = [];
+  private _isFirst: boolean = true;
   private _status: number = 0;
   static _experimentApi: boolean = false;
   constructor(fetch: PromiseFn, filter?: FilterFn) {
@@ -54,6 +54,10 @@ class FetchData {
   }
 
   /**
+   * TODO: 当同一个组件被重复引入的时候可能会造成冲突
+   */
+
+  /**
    * 缓存机制当前状态机设计:
    *    1. 若read方法只传了第一个参数, 若为false则不缓存, 若为true则直接缓存
    *    2. 若第一个参数为false, 且有后续参数, 不缓存, 后续参数作为 this._fetch 的参数
@@ -73,9 +77,8 @@ class FetchData {
         case 3: (this._status = 7); break;
         // case 4 表示希望走缓存 并且前后参数长度一致 则需要判断两次参数的是否完全一样
         case 4:
-          const prev = this._prevParams;
-          const current = args;
-          isEqual(prev, current) ? (this._status = 6) : (this._status = 7);
+          this._isFirst ? ((this._status = 7) && (this._isFirst = false)) :
+            isEqual(this._prevParams, args) ? (this._status = 6) : (this._status = 7);
           break;
         // case 5 表示刚刚已经发送了一次请求并且拿到了结果 可以直接返回了
         case 5:

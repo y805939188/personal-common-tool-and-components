@@ -1,0 +1,36 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#react {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#test-wrapper {
+  font: 700 100px "Comic Sans MS";
+  color: white;
+  text-shadow:
+    0 0 20px #fdec84,
+    10px -10px 30px #ffae35,
+    20px -20px 40px #ec760c,
+    -20px -10px 50px #cd4607,
+    0px -40px 60px #973717,
+    10px -60px 70px #451b0e;
+}
+
