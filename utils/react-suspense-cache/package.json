@@ -4,7 +4,7 @@
   "description": "my-widget",
   "main": "lib/index.js",
   "scripts": {
-    "start": "concurrently \"npm run start:demo\" \"npm run start:widget\"",
+    "start": "concurrently \"npm run start:demo\" \"npm run start:widget\" \"npm run start:mock\"",
     "start:widget": "NODE_ENV=development ./node_modules/.bin/webpack --config ./config/webpack/webpack.prod.js --watch",
     "start:demo": "webpack-dev-server --config ./config/webpack/webpack.dev.js --open",
     "start:mock": "node ./mock-files/server.js",
