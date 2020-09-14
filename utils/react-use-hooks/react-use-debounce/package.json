@@ -1,7 +1,7 @@
 {
   "name": "react-use-debounce",
   "version": "0.0.1",
-  "description": "my-widget",
+  "description": "react-use-debounce",
   "main": "lib/index.js",
   "scripts": {
     "start": "concurrently \"npm run start:demo\" \"npm run start:widget\"",
@@ -65,5 +65,10 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
-  "keywords": []
+  "keywords": [
+    "react-use-debounce",
+    "use-debounce",
+    "debounce",
+    "react-use"
+  ]
 }
