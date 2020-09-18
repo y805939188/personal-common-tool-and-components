@@ -10,6 +10,8 @@
   3. [简单地创建一个 react/vue/angular 组件或工具类的脚手架](https://github.com/y805939188/elf-cli)
 
   4. [react-use-debounce 基于 react hooks 的防抖](https://github.com/y805939188/personal-common-tool-and-components/tree/master/utils/react-use-hooks/react-use-debounce)
+
+  5. [react-use-state-with-callback 带有 callback 的 useState](https://github.com/y805939188/personal-common-tool-and-components/tree/master/utils/react-use-hooks/react-use-state-with-callback)
 </br>
 </br>
 
