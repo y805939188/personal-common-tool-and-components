@@ -1,6 +1,6 @@
 {
   "name": "react-use-state-with-callback",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "use state with callback in hooks",
   "main": "lib/index.js",
   "scripts": {
@@ -15,6 +15,10 @@
   },
   "author": "Shinn",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/y805939188/personal-common-tool-and-components/tree/master/utils/react-use-hooks/react-use-state-with-callback"
+  },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/plugin-external-helpers": "^7.8.3",
@@ -71,6 +75,7 @@
     "react-use-state-with-callback",
     "react-use-callback",
     "react-use-state-callback",
+    "use-state-with-callback",
     "state callback",
     "use callback",
     "use hooks with callback"
