@@ -9,6 +9,10 @@
 ---
 
 ## 简单使用
+```bash
+npm install --save react-suspense-cache
+```
+
 > * 父组件中
 ![test1-1](./suspense-cache-img/test1-1.png)
 
