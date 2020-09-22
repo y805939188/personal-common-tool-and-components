@@ -1,0 +1,26 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:global {
+  html {
+    height: 100%;
+    width: 100%;
+    body {
+      height: 100%;
+      width: 100%;
+      #react {
+        height: 100vh;
+        & > div {
+          height: 100%;
+          .pd-prophet-content {
+            background-color: aliceblue;
+          }
+        }
+      }
+    }
+  }
+}
+

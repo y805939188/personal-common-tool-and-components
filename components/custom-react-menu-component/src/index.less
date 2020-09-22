@@ -1,0 +1,78 @@
+:global {
+  .custom-prophet-content-wrapper.has-children {
+    width: 100%;
+  }
+  .custom-prophet-content-wrapper {
+    display: flex;
+    position: relative;
+    height: 100%;
+    .custom-prophet-content {
+      border-right: 1px solid #e8e8e8;
+      .custom-prophet-content-header {
+        font-size: 16px;
+        color: #323b4b;
+        font-weight: bolder;
+        padding: 24px 0 24px 18px;
+      }
+      & > ul {
+        overflow-y: auto;
+      }
+      .ant-menu-item {
+        overflow-x: auto;
+      }
+    }
+    .custom-prophet-content-menu {
+      width: 200px;
+      & > li.custom-menu-item:after {
+        content: none;
+      }
+      & > li.custom-menu-item {
+        padding-left: 24px;
+      }
+      .menu-dot {
+        a:after {
+          content: '';
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #cc1b1b;
+          position: absolute;
+          top: 50%;
+          margin-top: -3px;
+          right: 18px;
+        }
+      }
+      
+    }
+    .custom-prophet-content-entity {
+      flex: 6;
+      position: relative;
+      height: 100%;
+      width: 100vw;
+    }
+    .custom-prophet-content-no-item {
+      margin-top: 48px;
+    }
+    .custom-menu-item::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #9FA7B1;
+      top: 50%;
+      margin-top: -2px;
+      transform: translateX(-10px);
+    }
+    .custom-menu-inline .custom-menu-item::after {
+      border-right: 4px solid #16c4c6;
+      right: 98%;
+      width: 4px;
+    }
+    .custom-menu.custom-prophet-content-menu {
+      border-right: none;
+    }
+  }
+}
