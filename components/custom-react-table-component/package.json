@@ -35,7 +35,7 @@
     "jest": "^24.9.0",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "rollup": "^1.27.13",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-clear": "^2.0.7",
